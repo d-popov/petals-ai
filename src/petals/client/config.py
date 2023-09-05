@@ -4,11 +4,11 @@ from typing import Optional, Sequence, Union
 from hivemind import PeerID
 
 from petals.constants import PUBLIC_INITIAL_PEERS
-
+from petals.config import INITIAL_PEERS
 
 @dataclasses.dataclass
 class ClientConfig:
-    initial_peers: Sequence[str] = tuple(PUBLIC_INITIAL_PEERS)  # a list of initial peers for hivemind DHT
+    initial_peers: Sequence[str] = tuple(INITIAL_PEERS)  # a list of initial peers for hivemind DHT
     dht_prefix: Optional[str] = None  # a prefix for all dht keys that correspond to this model (default: model name)
     daemon_startup_timeout: int = 60  # timeout for the libp2p daemon connecting to initial peers
 
