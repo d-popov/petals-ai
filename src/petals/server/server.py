@@ -321,7 +321,7 @@ class Server:
 
         num_blocks = min(num_blocks, self.block_config.num_hidden_layers)
         logger.info(
-            f"Server will fill your GPU memory with {num_blocks} transformer blocks. "
+            f"Server will fill your GPU memory ({total_memory_per_block * num_blocks / gib} GB) with {num_blocks} transformer blocks each {total_memory_per_block/ gib} GB. "
             f"If you want to leave some free GPU memory, please specify a lesser --num_blocks manually"
         )
         return num_blocks
