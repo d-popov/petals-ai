@@ -479,7 +479,7 @@ class ModuleContainer(threading.Thread):
             daemon=True,
         )
         dht_announcer.start()
-        logger.info(f"Announced that blocks {block_indices} are joining")
+        logger.info(f"Announced that blocks {block_indices} are joining ({model_info.num_blocks} total)")
 
         assert len(tensor_parallel_devices) >= 1 and all(isinstance(d, torch.device) for d in tensor_parallel_devices)
 
